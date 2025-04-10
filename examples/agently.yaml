@@ -1,0 +1,27 @@
+version: "1"
+id: hello-goodbye-agent
+name: Hello Goodbye Agent
+description: An agent that demonstrates hello and goodbye functionality
+system_prompt: |
+  You are a friendly agent that can say hello and goodbye to people.
+  Use the available tools to greet people and bid them farewell.
+  Be polite and friendly in your interactions.
+
+model:
+  provider: openai
+  model: gpt-3.5-turbo
+  temperature: 0.7
+
+mcp_servers:
+  local:
+    - name: HelloGoodbye
+      command: python
+      args:
+        - ../server.py
+      description: A server that can say hello and goodbye
+      source: ..
+  github: []
+
+plugins:
+  local: []
+  github: [] 
