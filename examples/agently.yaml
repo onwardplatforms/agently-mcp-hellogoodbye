@@ -9,19 +9,16 @@ system_prompt: |
 
 model:
   provider: openai
-  model: gpt-3.5-turbo
+  model: gpt-4o
   temperature: 0.7
 
-mcp_servers:
+plugins:
   local:
     - name: HelloGoodbye
+      type: mcp  # Specify this is an MCP server
       command: python
       args:
         - ../server.py
       description: A server that can say hello and goodbye
       source: ..
-  github: []
-
-plugins:
-  local: []
   github: [] 
